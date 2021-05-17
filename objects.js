@@ -15,9 +15,8 @@ class Hamster {
   }
 }
 
-const gus = new Hamster('Gus'); //Argument is Gus
+// const gus = new Hamster('Gus'); //Argument is Gus
 
-const somevar = 'somevalue';
 
 // ------------------------
 
@@ -55,12 +54,67 @@ class Person {
       const newAge = this.age += ageValue;
       const newHeight = this.height += ageValue;
       const newWeight = this.weight += ageValue;
-      console.log(newAge, newHeight, newWeight);
+      const income = ageValue * 10;
+      const newValue = this.bankAccount += income;
+      console.log(`new age: ${newAge}, new height: ${newHeight}, new weight: ${newWeight} and current income: ${newValue}`);
     }
 
-  buyHamster() {
+  buyHamster(hamster) {
     let newHamster = [];
-    newHamster.push(Gus);
+    newHamster.push(hamster);
+    const newMood = this.mood += 10;
+    console.log(newMood)
+    const newValue = this.bankAccount -= gus.getPrice();
+    console.log(newValue);
     return newHamster;
+
   }
 }
+
+
+// 6. Create a hamster named "Gus"
+// I had to move number 6 up here becuase I was getting undefined if I kept it in line 94.
+
+const gus = new Hamster('Gus');
+
+// console.log(timmy.eat(2, 5))
+// console.log(timmy.exercise(5));
+// console.log(timmy.ageUp(5));
+
+// 1. Instantiate a new Person named Timmy
+const timmy = new Person('Timmy');
+
+// 2. Age Timmy five years
+console.log(timmy.ageUp(5));
+
+
+// 3. At this point Timmy's a little bummed. As a precocious child, he feels he's "seen it all" already. Have him eat five times.
+ console.log(timmy.eat(5, 5));
+
+// 4. Now Timmy's a little heavier than he wants to be. Kindergarten's coming up and he wants to look good. Have him exercise five times
+
+console.log(timmy.exercise(5));
+// 5. Age Timmy 9 years
+
+console.log(timmy.ageUp(9));
+
+
+
+// 7. Set Gus's owner to the string "Timmy"
+
+console.log(gus.owner = 'Timmy');
+
+// 8. Have Timmy "buy" Gus
+
+console.log(timmy.buyHamster(gus));
+
+// 9. Age Timmy 15 years
+
+console.log(timmy.ageUp(15));
+
+// 10. Have Timmy eat twice
+console.log(timmy.eat(2, 2));
+
+// 11. Have Timmy exercise twice
+
+console.log(timmy.exercise(2));
