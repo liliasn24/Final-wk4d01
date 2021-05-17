@@ -15,10 +15,11 @@ class Hamster {
   }
 }
 
-const Gus = new Hamster('Gus'); //Argument is Gus
+const gus = new Hamster('Gus'); //Argument is Gus
 
+const somevar = 'somevalue';
 
-// ==========================================================
+// ------------------------
 
 class Person {
   constructor(name){
@@ -42,31 +43,21 @@ class Person {
   greet(){
     console.log();
   }
-  eat(){
-    let newAge = this.age + 1;
-    let newMood = this.mood + 1;
-    console.log(newAge);
-    console.log(newMood);
-    return newAge;
-    return newMood;
+  eat(weight, mood){
+    console.log(this.weight += weight);
+    console.log(this.mood += mood);
+    // I tried to return the new weigth and mood, but I'm not sure why it was just returning line 47 for weight but not line 48 for mood, so I just console logged them.
   }
-  exercise() {
-    let newExercise = this.exercise +1;
-    console.log(newExercise);
-    return newExercise;
+  exercise(exerciseValue) {
+    return this.weight -= exerciseValue;
   }
-  ageUp() {
-    let newAge = this.age + 1;
-    let newHeight = this.height + 1;
-    let newMood = this.mood - 1;
-    let newBankAcct = this. bankAccount + 10;
-    console.log(newBankAcct);
-    console.log(newMood);
-    return newAge;
-    return newHeight;
-    return newMood;
-    return newBankAcct;
-  }
+  ageUp(ageValue) {
+      const newAge = this.age += ageValue;
+      const newHeight = this.height += ageValue;
+      const newWeight = this.weight += ageValue;
+      console.log(newAge, newHeight, newWeight);
+    }
+
   buyHamster() {
     let newHamster = [];
     newHamster.push(Gus);
